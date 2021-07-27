@@ -11,6 +11,7 @@ import java.util.Optional;
 
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
+import javax.swing.JFrame;
 
 import org.cytoscape.util.swing.FileChooserFilter;
 import org.cytoscape.util.swing.FileUtil;
@@ -79,7 +80,7 @@ public class FileButton extends JButton {
 	
 	private void chooseFile(){
 		FileChooserFilter filter = new FileChooserFilter(fileDescription, getSuffixes());
-		file = Optional.ofNullable(fileUtil.getFile(this, helpText,
+		file = Optional.ofNullable(fileUtil.getFile(new JFrame(), helpText,
 				FileUtil.LOAD, Arrays.asList(filter)));
 		update();
 	}

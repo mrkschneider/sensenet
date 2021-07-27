@@ -104,7 +104,7 @@ public class TableView extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				FileChooserFilter filter = 
 						new FileChooserFilter(".csv file", "csv");
-				File f = fileUtil.getFile(TableView.this, "save",
+				File f = fileUtil.getFile(new JFrame(), "save",
 						FileUtil.SAVE, Arrays.asList(filter));
 				if(f==null) {
 					//JOptionPane.showMessageDialog(TableView.this, "Could not open file", "File error", JOptionPane.ERROR_MESSAGE);

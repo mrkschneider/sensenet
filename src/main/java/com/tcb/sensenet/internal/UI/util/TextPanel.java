@@ -17,6 +17,7 @@ import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -82,7 +83,7 @@ public class TextPanel extends JPanel {
 	private void saveContent(Component parent) throws IOException {
 		FileChooserFilter filter = 
 					new FileChooserFilter(".txt file", "txt");
-		File f = appGlobals.fileUtil.getFile(parent, "save",
+		File f = appGlobals.fileUtil.getFile(new JFrame(), "save",
 					FileUtil.SAVE, Arrays.asList(filter));
 		if(f==null) return;
 		FileOutputStream out =  new FileOutputStream(f, false);

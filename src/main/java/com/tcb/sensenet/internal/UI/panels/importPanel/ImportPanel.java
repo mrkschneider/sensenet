@@ -12,6 +12,7 @@ import java.util.Optional;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 import org.cytoscape.util.swing.FileChooserFilter;
 import org.cytoscape.util.swing.FileUtil;
@@ -86,7 +87,7 @@ public class ImportPanel extends DefaultPanel {
 			try{
 				FileChooserFilter filter = 
 						new FileChooserFilter(".aif file", "aif");
-				Optional<File> f = Optional.ofNullable(appGlobals.fileUtil.getFile(this, "write .aif file",
+				Optional<File> f = Optional.ofNullable(appGlobals.fileUtil.getFile(new JFrame(), "write .aif file",
 						FileUtil.SAVE, Arrays.asList(filter)));
 				if(!f.isPresent()) return;
 				ExportAifTaskConfig config = ExportAifTaskConfig.create(f.get().toPath());

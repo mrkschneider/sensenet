@@ -127,7 +127,7 @@ public class LogFrame extends JFrame {
 	private void saveLog(LogBuilder log, Component parent) throws IOException {
 		FileChooserFilter filter = 
 					new FileChooserFilter(".log file", "log");
-		File f = appGlobals.fileUtil.getFile(parent, "save",
+		File f = appGlobals.fileUtil.getFile(new JFrame(), "save",
 					FileUtil.SAVE, Arrays.asList(filter));
 		if(f==null) return;
 		DefaultFileWriter writer = new DefaultFileWriter();
